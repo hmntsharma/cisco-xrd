@@ -1,0 +1,32 @@
+---
+site_name: Cisco XRd with XRD-Tools
+site_description: A brief look at the Cisco XRd and xrd-tools
+site_author: Hemant Sharma
+site_url: https://hmntsharma.github.io/cisco-xrd
+
+theme:
+  name: material
+  palette:
+    primary: black
+    accent: red
+  icon:
+    logo: material/router
+    repo: fontawesome/brands/git-alt
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.top
+    - toc.integrate 
+repo_url: https://github.com/hmntsharma/cisco-xrd
+repo_name: hmntsharma/cisco-xrd
+edit_uri: ""
+
+nav:
+  - Introduction : index.md
+  - Setup: base_setup.md
+  - Topologies:
+    - Simple BGP: simple_bgp.md
+    - Segment Routing: segment_routing.md
+
