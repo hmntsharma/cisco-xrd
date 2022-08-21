@@ -21,6 +21,17 @@ username cisco
 ```
 + The `docker attach --detach-keys=ctrl-\\` is good enough for me to attach and detach the containers
     + Thinking out loud, perhaps an ssh server in the custom image would work right out of the box on the mgmt ip, there wouldn't be any need for `attach`
+    + **Update:** Likewise, simply add `ssh server v2` in the startup-config file and ssh also works with the username/password saved above.
+    + The ip addresses of the nodes can be found by inspecting the docket network for the mgmt bridge, defined in the `docker-compose.yml file`
+```
+lab@xrdlab:~/github/xrd-tools/samples/xr_compose_topos/simple-bgp$ sudo docker network inspect simple-bgp_mgmt | grep -i -E "name|ipv4"
+        "Name": "simple-bgp_mgmt",
+                "Name": "xr-2",
+                "IPv4Address": "172.30.0.2/24",
+                "Name": "xr-1",
+                "IPv4Address": "172.30.0.3/24",
+lab@xrdlab:~/github/xrd-tools/samples/xr_compose_topos/simple-bgp$
+```
 + XRD-Tools uses, only docker(docker-compose) data-plane infrastructure to deploy the topology, which is why there is a docker bridge network for each segment of the topology, which is different from another tool containerlab, which uses docker and base linux both, no complaints, just an observation
 + It would be a quick and easy way to test topologies, automated with netconf and grpc
 
