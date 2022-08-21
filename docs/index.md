@@ -32,6 +32,19 @@ lab@xrdlab:~/github/xrd-tools/samples/xr_compose_topos/simple-bgp$ sudo docker n
                 "IPv4Address": "172.30.0.3/24",
 lab@xrdlab:~/github/xrd-tools/samples/xr_compose_topos/simple-bgp$
 ```
+
+```
+lab@xrdlab:~/github/xrd-tools/samples/xr_compose_topos/simple-bgp$ ssh -l cisco 172.30.0.3
+(cisco@172.30.0.3) Password:
+Last login: Sun Aug 21 00:20:58 2022 from 172.30.0.1
+
+
+
+RP/0/RP0/CPU0:ios#exit
+Connection to 172.30.0.3 closed.
+lab@xrdlab:~/github/xrd-tools/samples/xr_compose_topos/simple-bgp$
+```
+
 + XRD-Tools uses, only docker(docker-compose) data-plane infrastructure to deploy the topology, which is why there is a docker bridge network for each segment of the topology, which is different from another tool containerlab, which uses docker and base linux both, no complaints, just an observation
 + It would be a quick and easy way to test topologies, automated with netconf and grpc
 
